@@ -1,12 +1,11 @@
-const redTheme = {
+import defaultTheme from './defaultTheme';
+
+const theme = {
   colors: {
-    background: '#FFA756',
-    black: '#000000',
-    gray: '#747476',
-    light: '#f2f2f2',
-    primary: '#FD7D24',
-    white: '#ffffff',
+    ...defaultTheme.colors,
+    background: '#FF6568',
+    primary: '#EA5D60',
   },
 };
 
-export default redTheme;
+export default theme;

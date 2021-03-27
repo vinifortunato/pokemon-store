@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { hexToRgba } from '@src/utils';
 
 export const Wrapper = styled.section`
@@ -8,15 +8,17 @@ export const Wrapper = styled.section`
 `;
 
 export const Container = styled.div`
-  background-color: #ffffff;
-  border-radius: 5px;
-  box-shadow: 0px 10px 20px ${hexToRgba('#000000', 0.4)};
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  height: fit-content;
-  padding: 10px;
-  position: relative;
+  ${({ theme }) => css`
+    background-color: ${theme.colors.white};
+    border-radius: 5px;
+    box-shadow: 0px 10px 20px ${hexToRgba(theme.colors.black, 0.4)};
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: fit-content;
+    padding: 10px;
+    position: relative;
+  `}
 `;
 
 export const Title = styled.p`

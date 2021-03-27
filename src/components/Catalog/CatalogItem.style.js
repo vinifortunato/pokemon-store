@@ -56,9 +56,12 @@ export const Label = styled.p`
 `;
 
 export const Price = styled.p`
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 5px;
+  ${({ theme }) => css`
+    color: ${theme.colors.black};
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  `}
 `;
 
 export const ButtonAdapter = styled.div`

@@ -1,12 +1,45 @@
-const defaultTheme = {
+const theme = {
   colors: {
-    background: '#8BBE8A',
+    background: '#ffffff',
     black: '#000000',
     gray: '#747476',
     light: '#f2f2f2',
-    primary: '#62B957',
+    primary: '#B5B9C4',
     white: '#ffffff',
+    stores: {
+      black: '#6F6E78',
+      blue: '#58ABF6',
+      brown: '#D4C294',
+      gray: '#B5B9C4',
+      green: '#8BBE8A',
+      pink: '#EBA8C3',
+      purple: '#9F6E97',
+      red: '#FF6568',
+      white: '#B5B9C4',
+      yellow: '#F2CB55',
+    },
+    tags: {
+      bug: '#8CB230',
+      dark: '#58575F',
+      default: '#B5B9C4',
+      dragon: '#0F6AC0',
+      electric: '#EED535',
+      fairy: '#ED6EC7',
+      fighting: '#D04164',
+      fire: '#FD7D24',
+      flying: '#748FC9',
+      ghost: '#556AAE',
+      grass: '#62B957',
+      ground: '#DD7748',
+      ice: '#61CEC0',
+      normal: '#9DA0AA',
+      poison: '#A552CC',
+      psychic: '#EA5D60',
+      rock: '#BAAB82',
+      steel: '#417D9A',
+      water: '#4A90DA',
+    },
   },
 };
 
-export default defaultTheme;
+export default theme;

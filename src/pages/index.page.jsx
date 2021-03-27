@@ -1,32 +1,72 @@
-import Link from 'next/link';
-import { Head } from '@src/components';
+import { useCallback } from 'react';
+import { useRouter } from 'next/router';
+import { Head, Stores } from '@src/components';
 import { PageStyle } from '@src/styles';
 
 const Home = ({ initialData }) => {
+  const router = useRouter();
+
+  const handleItemClick = useCallback(
+    (item) => {
+      router.push(`/${item}`);
+    },
+    [router],
+  );
+
   return (
-    <div>
+    <PageStyle.Page>
       <Head title="Pokémon Stores" />
       <PageStyle.Container>
-        <p>Please, select a store:</p>
-        <ul>
-          {initialData.map((color) => (
-            <li key={color}>
-              <Link href={`/${color}`}>
-                <a>{color}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <Stores items={initialData} onItemClick={handleItemClick} />
       </PageStyle.Container>
-    </div>
+    </PageStyle.Page>
   );
 };
 
-export const getStaticProps = async () => {
-  const url = 'https://pokeapi.co/api/v2/pokemon-color/';
-  const response = await fetch(url);
-  const data = await response.json();
-  const colors = data.results.map((element) => element.name);
+export const getStaticProps = () => {
+  // Colors by https://pokeapi.co/api/v2/pokemon-color/
+  const colors = [
+    {
+      name: 'black',
+      logo: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/143.svg',
+    },
+    {
+      name: 'blue',
+      logo: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/7.svg',
+    },
+    {
+      name: 'brown',
+      logo: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/13.svg',
+    },
+    {
+      name: 'gray',
+      logo: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/66.svg',
+    },
+    {
+      name: 'green',
+      logo: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg',
+    },
+    {
+      name: 'pink',
+      logo: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/35.svg',
+    },
+    {
+      name: 'purple',
+      logo: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/19.svg',
+    },
+    {
+      name: 'red',
+      logo: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/4.svg',
+    },
+    {
+      name: 'white',
+      logo: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/12.svg',
+    },
+    {
+      name: 'yellow',
+      logo: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/27.svg',
+    },
+  ];
 
   return {
     props: {

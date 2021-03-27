@@ -3,8 +3,8 @@ import defaultTheme from './defaultTheme';
 const theme = {
   colors: {
     ...defaultTheme.colors,
-    background: '#58ABF6',
-    primary: '#4A90DA',
+    background: '#B5B9C4',
+    primary: '#B5B9C4',
   },
 };
 

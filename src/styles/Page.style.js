@@ -5,11 +5,12 @@ export const Page = styled.div`
     background-color: ${theme.colors.white};
     display: flex;
     flex: 1;
+    height: 100%;
     justify-content: center;
     position: relative;
 
     &::before {
-      background-color: red;
+      background-color: ${theme.colors.white};
       background-image: linear-gradient(0deg, ${theme.colors.white} 55%, ${theme.colors.background} 90%);
       content: '';
       height: 500px;
@@ -35,4 +36,51 @@ export const Content = styled.div`
   display: flex;
   flex-direction: row;
   margin: 20px 0px;
+`;
+
+export const Header = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  z-index: 10;
+`;
+
+export const Logo = styled.div`
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 15px;
+  position: relative;
+`;
+
+export const LogoImage = styled.img`
+  height: 32px;
+  left: 0;
+  position: absolute;
+  width: 32px;
+  z-index: -1;
+`;
+
+export const LogoTitle = styled.p`
+  ${({ theme }) => css`
+    color: ${theme.colors.white};
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 20px;
+    margin-left: 40px;
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  `}
+`;
+
+export const LogoSubtitle = styled.p`
+  ${({ theme }) => css`
+    color: ${theme.colors.black};
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 40px;
+    text-align: left;
+  `}
 `;

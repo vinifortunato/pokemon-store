@@ -6,11 +6,11 @@ import * as Style from './CatalogItem.style';
 const CatalogItem = ({ id, image, label = 'Pokémon', onAddClick, onViewClick, price = 0 }) => {
   const handleAddClick = useCallback(() => {
     onAddClick && onAddClick(id);
-  }, []);
+  }, [id, onAddClick]);
 
   const handleViewClick = useCallback(() => {
     onViewClick && onViewClick(id);
-  }, []);
+  }, [id, onViewClick]);
 
   return (
     <Style.Wrapper>
