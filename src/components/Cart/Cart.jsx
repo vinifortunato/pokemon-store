@@ -4,7 +4,7 @@ import { currency } from '@src/utils';
 import CartItem from './CartItem';
 import * as Style from './Cart.style';
 
-const Cart = ({ items, onFinalize, onRemoveItem }) => {
+const Cart = ({ items, onCheckout, onRemoveItem }) => {
   const handleRemoveItem = useCallback(
     (item) => {
       onRemoveItem && onRemoveItem(item.id);
@@ -12,11 +12,11 @@ const Cart = ({ items, onFinalize, onRemoveItem }) => {
     [onRemoveItem],
   );
 
-  const handleFinalize = useCallback(
+  const handleCheckout = useCallback(
     (item) => {
-      onFinalize && onFinalize(item);
+      onCheckout && onCheckout(item);
     },
-    [onFinalize],
+    [onCheckout],
   );
 
   let total = 0;
@@ -37,15 +37,15 @@ const Cart = ({ items, onFinalize, onRemoveItem }) => {
   return (
     <Style.Wrapper>
       <Style.Container>
-        <Style.Title>Carrinho</Style.Title>
+        <Style.Title>{`Cart ${itemsMap.length > 0 ? `(${itemsMap.length})` : ''}`}</Style.Title>
         {itemsMap.length <= 0 ? (
-          <Style.EmptyText>Nenhum Pokémon.</Style.EmptyText>
+          <Style.EmptyText>Empty.</Style.EmptyText>
         ) : (
           <>
             <div>{itemsMap}</div>
             <div>
               <Style.Price>{`Total: ${currency({ value: total })}`}</Style.Price>
-              <ButtonLarge label="Finalizar" onClick={handleFinalize} />
+              <ButtonLarge label="Checkout" onClick={handleCheckout} />
             </div>
           </>
         )}

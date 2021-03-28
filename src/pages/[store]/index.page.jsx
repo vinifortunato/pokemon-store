@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { useRouter } from 'next/router';
-import { Cart, Catalog, Head, Search, ModalDetails, ModalFinalize } from '@src/components';
+import { Cart, Catalog, Head, Search, ModalDetails, ModalCheckout } from '@src/components';
 import { capitalize } from '@src/utils';
 import { PageStyle } from '@src/styles';
 
@@ -10,7 +10,7 @@ const Store = ({ initialData }) => {
   const [products, setProducts] = useState(initialData);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [cartProducts, setCartProducts] = useState([]);
-  const [showModalFinalize, setShowModalFinalize] = useState(false);
+  const [showModalCheckout, setShowModalCheckout] = useState(false);
 
   const onLogoClick = useCallback(() => {
     router.push('/');
@@ -52,8 +52,8 @@ const Store = ({ initialData }) => {
     [products],
   );
 
-  const finalize = useCallback(() => {
-    setShowModalFinalize(true);
+  const checkout = useCallback(() => {
+    setShowModalCheckout(true);
   }, []);
 
   const onModalDetailsAdd = useCallback(() => {
@@ -67,8 +67,8 @@ const Store = ({ initialData }) => {
     setSelectedProduct(null);
   }, []);
 
-  const onModalFinalizeConfirm = useCallback(() => {
-    setShowModalFinalize(false);
+  const onModalCheckoutConfirm = useCallback(() => {
+    setShowModalCheckout(false);
     setCartProducts([]);
   }, []);
 
@@ -89,7 +89,7 @@ const Store = ({ initialData }) => {
         </PageStyle.Header>
         <PageStyle.Content>
           <Catalog onAddProduct={addProduct} onViewProduct={viewProduct} products={products} />
-          <Cart items={cartProducts} onFinalize={finalize} onRemoveItem={removeProduct} />
+          <Cart items={cartProducts} onCheckout={checkout} onRemoveItem={removeProduct} />
         </PageStyle.Content>
       </PageStyle.Container>
       <ModalDetails
@@ -99,7 +99,7 @@ const Store = ({ initialData }) => {
         price={selectedProduct?.price}
         show={!!selectedProduct}
       />
-      <ModalFinalize show={showModalFinalize} onConfirm={onModalFinalizeConfirm} />
+      <ModalCheckout show={showModalCheckout} onConfirm={onModalCheckoutConfirm} />
     </PageStyle.Page>
   );
 };

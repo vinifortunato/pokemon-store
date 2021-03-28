@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
     position: fixed;
     top: 0px;
     width: 100%;
+    z-index: 20;
 
     ${show
       ? css`
@@ -34,6 +35,13 @@ export const Container = styled.div`
     top: 30%;
     transform: translate(-50%, 0%);
     width: 400px;
+
+    @media (max-width: ${theme.breakpoints.sm}) {
+      left: 10px;
+      right: 10px;
+      transform: translate(0%, 0%);
+      width: auto;
+    }
   `}
 `;
 

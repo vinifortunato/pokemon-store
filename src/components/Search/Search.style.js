@@ -1,13 +1,19 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
-  align-items: center;
-  background-color: #f2f2f2;
-  border-radius: 10px;
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  position: relative;
+  ${({ theme }) => css`
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    position: relative;
+
+    @media (max-width: ${theme.breakpoints.md}) {
+      width: 100%;
+    }
+  `}
 `;
 
 export const Input = styled.input`

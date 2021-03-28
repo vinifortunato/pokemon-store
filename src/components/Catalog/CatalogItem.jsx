@@ -23,7 +23,7 @@ const CatalogItem = ({ id, image, label = 'Pokémon', onAddClick, onViewClick, p
         <div>
           <Style.Price>{currency({ value: price })}</Style.Price>
           <Style.ButtonAdapter>
-            <ButtonSmall label="Comprar" onClick={handleAddClick} />
+            <ButtonSmall label="Buy" onClick={handleAddClick} />
           </Style.ButtonAdapter>
         </div>
       </Style.Container>

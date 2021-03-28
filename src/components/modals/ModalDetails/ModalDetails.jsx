@@ -57,7 +57,7 @@ const ModalDetails = ({ id, onAdd, onClose, price, show = true }) => {
             <Style.Details>
               <p>{currency({ value: price })}</p>
             </Style.Details>
-            <ButtonLarge label="Comprar" onClick={handleAddClick} />
+            <ButtonLarge label="Buy" onClick={handleAddClick} />
             <Style.ButtonCloseAdapter>
               <ButtonIcon Icon={IconClose} onClick={handleCloseClick} />
             </Style.ButtonCloseAdapter>

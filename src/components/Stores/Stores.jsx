@@ -16,7 +16,6 @@ const Stores = ({ items, onItemClick }) => {
 
   return (
     <Style.Wrapper>
-      <Style.Title>Selecione uma loja:</Style.Title>
       <Style.Container>{map}</Style.Container>
     </Style.Wrapper>
   );

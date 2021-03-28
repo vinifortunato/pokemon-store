@@ -22,36 +22,34 @@ export const Page = styled.div`
   `}
 `;
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1000px;
-  padding: 0px 10px;
-  width: 100%;
-`;
-
-export const Content = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin: 20px 0px;
-`;
-
 export const Header = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin-top: 20px;
-  z-index: 10;
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    z-index: 10;
+
+    @media (max-width: ${theme.breakpoints.md}) {
+      align-items: center;
+      flex-direction: column;
+    }
+  `}
 `;
 
 export const Logo = styled.div`
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-right: 15px;
-  position: relative;
+  ${({ theme }) => css`
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 15px;
+    position: relative;
+
+    @media (max-width: ${theme.breakpoints.md}) {
+      margin-bottom: 10px;
+      margin-right: 0px;
+    }
+  `}
 `;
 
 export const LogoImage = styled.img`
@@ -82,5 +80,27 @@ export const LogoSubtitle = styled.p`
     font-weight: 700;
     margin-left: 40px;
     text-align: left;
+  `}
+`;
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+  padding: 0px 10px;
+  width: 100%;
+`;
+
+export const Content = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0px;
+
+    @media (max-width: ${theme.breakpoints.md}) {
+      flex-direction: column-reverse;
+    }
   `}
 `;

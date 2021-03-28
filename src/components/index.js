@@ -5,4 +5,4 @@ export { default as Head } from './Head';
 export { default as Search } from './Search';
 export { default as Stores } from './Stores';
 export { default as Tag } from './Tag';
-export { ModalDetails, ModalFinalize } from './modals';
+export { ModalDetails, ModalCheckout } from './modals';

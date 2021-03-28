@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import * as Style from './Search.style';
 
-const Search = ({ onChange, placeholder = 'Pesquisar...' }) => {
+const Search = ({ onChange, placeholder = 'Search...' }) => {
   const onInputChange = useCallback(
     (event) => {
       onChange && onChange(event.target.value);

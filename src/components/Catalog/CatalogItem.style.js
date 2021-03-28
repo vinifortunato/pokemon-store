@@ -2,14 +2,20 @@ import styled, { css } from 'styled-components';
 import { hexToRgba } from '@src/utils';
 
 export const Wrapper = styled.div`
-  display: flex;
-  height: 115px;
-  margin: 20px 0px;
-  width: 334px;
+  ${({ theme }) => css`
+    display: flex;
+    height: 115px;
+    margin: 20px 0px;
+    width: 334px;
 
-  &:nth-child(2n + 1) {
-    margin-right: auto;
-  }
+    &:nth-child(2n + 1) {
+      margin-right: auto;
+    }
+
+    @media (max-width: ${theme.breakpoints.lg}) {
+      width: 100%;
+    }
+  `}
 `;
 
 export const Container = styled.div`
@@ -65,5 +71,5 @@ export const Price = styled.p`
 `;
 
 export const ButtonAdapter = styled.div`
-  max-width: 70px;
+  max-width: 80px;
 `;

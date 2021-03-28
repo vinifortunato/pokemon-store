@@ -1,4 +1,10 @@
 const theme = {
+  breakpoints: {
+    lg: '996px',
+    md: '751px',
+    sm: '507px',
+    xs: '367px',
+  },
   colors: {
     background: '#ffffff',
     black: '#000000',

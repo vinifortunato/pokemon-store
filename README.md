@@ -1,5 +1,7 @@
 # Pokemon Store
 
+![thumb](public/assets/images/demo/demo-01.png)
+
 ## Requirements
 
 - Git 2.25.1 or higher
@@ -32,6 +34,19 @@ Start development mode:
 ```bash
 yarn dev
 ```
+## Available themes:
+
+- Black
+- Blue
+- Brown
+- Gray
+- Green
+- Pink
+- Purple
+- Red
+- White
+- Yellow
+
 ## Tips
 
 Install `ESLint`, `Stylelint` and `Prettier` extensions in your IDE. For `Visual Studio Code` [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint), [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) are recommended.

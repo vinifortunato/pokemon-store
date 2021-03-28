@@ -2,9 +2,16 @@ import styled, { css } from 'styled-components';
 import { hexToRgba } from '@src/utils';
 
 export const Wrapper = styled.section`
-  display: flex;
-  flex: 1;
-  margin-top: 20px;
+  ${({ theme }) => css`
+    display: flex;
+    flex: 1;
+    margin-top: 20px;
+
+    @media (max-width: ${theme.breakpoints.md}) {
+      margin-bottom: 30px;
+      margin-top: 0px;
+    }
+  `}
 `;
 
 export const Container = styled.div`

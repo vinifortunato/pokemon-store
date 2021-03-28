@@ -35,6 +35,13 @@ export const Container = styled.div`
     top: 30%;
     transform: translate(-50%, 0%);
     width: 400px;
+
+    @media (max-width: ${theme.breakpoints.sm}) {
+      left: 10px;
+      right: 10px;
+      transform: translate(0%, 0%);
+      width: auto;
+    }
   `}
 `;
 
@@ -45,8 +52,15 @@ export const Content = styled.div`
 `;
 
 export const Resume = styled.div`
-  display: flex;
-  flex: 1;
+  ${({ theme }) => css`
+    display: flex;
+    flex: 1;
+
+    @media (max-width: ${theme.breakpoints.xs}) {
+      align-items: center;
+      flex-direction: column;
+    }
+  `}
 `;
 
 export const ImageWrapper = styled.div`
@@ -56,17 +70,29 @@ export const ImageWrapper = styled.div`
 `;
 
 export const Image = styled.img`
-  height: 130px;
-  margin-right: 20px;
-  width: 130px;
+  ${({ theme }) => css`
+    height: 130px;
+    margin-right: 20px;
+    width: 130px;
+
+    @media (max-width: ${theme.breakpoints.xs}) {
+      margin-right: 0px;
+    }
+  `}
 `;
 
 export const ResumeDetails = styled.div`
-  align-items: flex-start;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
+  ${({ theme }) => css`
+    align-items: flex-start;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (max-width: ${theme.breakpoints.xs}) {
+      align-items: center;
+    }
+  `}
 `;
 
 export const Id = styled.p`
