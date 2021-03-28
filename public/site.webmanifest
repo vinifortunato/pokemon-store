@@ -1,7 +1,7 @@
 {
   "name": "Pokemon Store",
   "short_name": "Pokemon Store",
-  "start_url": "/",
+  "start_url": "https://pokemon-store-br.vercel.app/",
   "icons": [
     {
       "src": "/assets/images/favicons/android-chrome-192x192.png",
