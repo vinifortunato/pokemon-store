@@ -29,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
+    font-display: swap;
     font-family: 'SF Pro Display';
     font-style: normal;
     font-weight: 400;
@@ -36,6 +37,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
+    font-display: swap;
     font-family: 'SF Pro Display';
     font-style: normal;
     font-weight: 500;
@@ -43,6 +45,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
+    font-display: swap;
     font-family: 'SF Pro Display';
     font-style: normal;
     font-weight: 700;
