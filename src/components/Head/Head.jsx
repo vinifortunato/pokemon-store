@@ -10,6 +10,7 @@ const Head = ({ title }) => (
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="Description" content="The best Pokémon are here!"></meta>
     <title>{title}</title>
   </NextHead>
 );
